@@ -1,8 +1,8 @@
 %define realname PyPar2
 
 Name:		pypar2
-Version:	1.3
-Release:	%mkrel 2
+Version:	1.4
+Release:	%mkrel 1
 License:	GPL
 Group:		File tools	
 Summary:	PyPar2 is a graphical frontend for the Linux par2 command line
@@ -44,6 +44,7 @@ desktop-file-install --vendor="" \
   --remove-category="Application" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/pypar2.desktop
 
+rm -f %{buildroot}/%{_bindir}/pypar2
 echo "python /usr/share/pypar2/src/main.py" > %{buildroot}/%{_bindir}/pypar2
 
 %find_lang %name
