@@ -62,7 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{_bindir}/pypar2
 %{_datadir}/applications/pypar2.desktop
-%{_mandir}/man1/pypar2.1.bz2
+%{_mandir}/man1/pypar2.*
 %{_datadir}/%{name}/res/*.glade
 %{_datadir}/%{name}/src/*.py
 %{_datadir}/pixmaps/%{name}.png
