@@ -2,7 +2,7 @@
 
 Name:		pypar2
 Version:	1.4
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
 Group:		File tools	
 Summary:	PyPar2 is a graphical frontend for the Linux par2 command line
@@ -39,8 +39,10 @@ rm -rf $RPM_BUILD_ROOT
 
 make install
 
+perl -pi -e 's,%{name}.png,%{name},g' %{buildroot}%{_datadir}/applications/*
+
 desktop-file-install --vendor="" \
-  --add-category="X-MandrivaLinux-System-FileTools" \
+  --add-category="System;Filesystem" \
   --remove-category="Application" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/pypar2.desktop
 
@@ -60,12 +62,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %name.lang
 %defattr(-,root,root)
-%{_bindir}/pypar2
 %{_datadir}/applications/pypar2.desktop
 %{_mandir}/man1/pypar2.*
 %{_datadir}/%{name}/res/*.glade
 %{_datadir}/%{name}/src/*.py
 %{_datadir}/pixmaps/%{name}.png
 %{_datadir}/%{name}/pix/*.png
-
+%defattr(755,root,root)
+%{_bindir}/pypar2
 
