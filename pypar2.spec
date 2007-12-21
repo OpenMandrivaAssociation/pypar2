@@ -8,6 +8,7 @@ Group:		File tools
 Summary:	PyPar2 is a graphical frontend for the Linux par2 command line
 URL:		http://pypar2.silent-blade.org/
 Source0:	http://pypar2.silent-blade.org/uploads/Main/%{name}-%{version}.tar.bz2
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch:	noarch
 BuildRequires:	python, pygtk2.0-devel, pygtk2.0-libglade, python-pyxml, desktop-file-utils, python-vte
 Requires:       pygtk2.0, pygtk2.0-libglade, parchive2, python-pyxml, python-vte
