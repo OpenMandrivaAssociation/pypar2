@@ -5,7 +5,7 @@ Version:	1.4
 Release:	%mkrel 2
 License:	GPL
 Group:		File tools	
-Summary:	PyPar2 is a graphical frontend for the Linux par2 command line
+Summary:	Graphical frontend for the Linux par2 command line
 URL:		http://pypar2.silent-blade.org/
 Source0:	http://pypar2.silent-blade.org/uploads/Main/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
