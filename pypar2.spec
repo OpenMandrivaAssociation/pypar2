@@ -71,3 +71,50 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(755,root,root)
 %{_bindir}/pypar2
 
+
+
+%changelog
+* Fri Sep 04 2009 Thierry Vignaud <tvignaud@mandriva.com> 1.4-7mdv2010.0
++ Revision: 430821
+- rebuild
+
+* Fri Aug 01 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.4-6mdv2009.0
++ Revision: 259451
+- rebuild
+
+* Thu Jul 24 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.4-5mdv2009.0
++ Revision: 247319
+- rebuild
+
+* Mon Feb 18 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.4-3mdv2008.1
++ Revision: 171056
+- rebuild
+- fix "foobar is blabla" summary (=> "blabla") so that it looks nice in rpmdrake
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Sat Sep 29 2007 Emmanuel Andry <eandry@mandriva.org> 1.4-2mdv2008.0
++ Revision: 93875
+- fix menu entry
+- fix desktop validation
+- fix permissions (bug #34299)
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - fix man pages
+
+* Mon Apr 23 2007 Jérôme Soyer <saispo@mandriva.org> 1.4-1mdv2008.0
++ Revision: 17233
+- New release 1.4
+
+
+* Fri Mar 02 2007 Jérôme Soyer <saispo@mandriva.org> 1.3-2mdv2007.0
++ Revision: 131194
+- Fix running
+
+* Wed Feb 28 2007 Jérôme Soyer <saispo@mandriva.org> 1.3-1mdv2007.1
++ Revision: 126952
+- Add BR
+- Import pypar2
+
