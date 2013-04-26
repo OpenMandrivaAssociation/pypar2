@@ -2,13 +2,12 @@
 
 Name:		pypar2
 Version:	1.4
-Release:	%mkrel 7
+Release:	8
 License:	GPL
 Group:		File tools	
 Summary:	Graphical frontend for the Linux par2 command line
 URL:		http://pypar2.silent-blade.org/
 Source0:	http://pypar2.silent-blade.org/uploads/Main/%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch:	noarch
 BuildRequires:	python, pygtk2.0-devel, pygtk2.0-libglade, python-pyxml, desktop-file-utils, python-vte
 Requires:       pygtk2.0, pygtk2.0-libglade, parchive2, python-pyxml, python-vte
@@ -35,8 +34,6 @@ perl -pi -e "s!/usr/local!%{buildroot}/usr!g" Makefile
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
-
 make install
 
 perl -pi -e 's,%{name}.png,%{name},g' %{buildroot}%{_datadir}/applications/*
@@ -44,24 +41,14 @@ perl -pi -e 's,%{name}.png,%{name},g' %{buildroot}%{_datadir}/applications/*
 desktop-file-install --vendor="" \
   --add-category="System;Filesystem" \
   --remove-category="Application" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/pypar2.desktop
+  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/pypar2.desktop
 
 rm -f %{buildroot}/%{_bindir}/pypar2
 echo "python /usr/share/pypar2/src/main.py" > %{buildroot}/%{_bindir}/pypar2
 
 %find_lang %name
 
-%post
-%{update_desktop_database}
-
-%postun
-%{clean_desktop_database}
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files -f %name.lang
-%defattr(-,root,root)
 %{_datadir}/applications/pypar2.desktop
 %{_mandir}/man1/pypar2.*
 %{_datadir}/%{name}/res/*.glade
