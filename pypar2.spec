@@ -2,15 +2,22 @@
 
 Name:		pypar2
 Version:	1.4
-Release:	8
+Release:	9
 License:	GPL
 Group:		File tools	
 Summary:	Graphical frontend for the Linux par2 command line
 URL:		http://pypar2.silent-blade.org/
 Source0:	http://pypar2.silent-blade.org/uploads/Main/%{name}-%{version}.tar.bz2
 BuildArch:	noarch
-BuildRequires:	python, pygtk2.0-devel, pygtk2.0-libglade, python-pyxml, desktop-file-utils, python-vte
-Requires:       pygtk2.0, pygtk2.0-libglade, parchive2, python-pyxml, python-vte
+BuildRequires:	python
+BuildRequires:	pygtk2.0-devel
+BuildRequires:	pygtk2.0-libglade
+BuildRequires:	desktop-file-utils
+BuildRequires:	python-vte
+Requires:       pygtk2.0
+Requires:       pygtk2.0-libglade
+Requires:       parchive2
+Requires:       python-vte
 
 Requires(post): desktop-file-utils 
 Requires(postun): desktop-file-utils
@@ -57,51 +64,4 @@ echo "python /usr/share/pypar2/src/main.py" > %{buildroot}/%{_bindir}/pypar2
 %{_datadir}/%{name}/pix/*.png
 %defattr(755,root,root)
 %{_bindir}/pypar2
-
-
-
-%changelog
-* Fri Sep 04 2009 Thierry Vignaud <tvignaud@mandriva.com> 1.4-7mdv2010.0
-+ Revision: 430821
-- rebuild
-
-* Fri Aug 01 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.4-6mdv2009.0
-+ Revision: 259451
-- rebuild
-
-* Thu Jul 24 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.4-5mdv2009.0
-+ Revision: 247319
-- rebuild
-
-* Mon Feb 18 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.4-3mdv2008.1
-+ Revision: 171056
-- rebuild
-- fix "foobar is blabla" summary (=> "blabla") so that it looks nice in rpmdrake
-- kill re-definition of %%buildroot on Pixel's request
-
-  + Olivier Blin <oblin@mandriva.com>
-    - restore BuildRoot
-
-* Sat Sep 29 2007 Emmanuel Andry <eandry@mandriva.org> 1.4-2mdv2008.0
-+ Revision: 93875
-- fix menu entry
-- fix desktop validation
-- fix permissions (bug #34299)
-
-  + Thierry Vignaud <tvignaud@mandriva.com>
-    - fix man pages
-
-* Mon Apr 23 2007 Jérôme Soyer <saispo@mandriva.org> 1.4-1mdv2008.0
-+ Revision: 17233
-- New release 1.4
-
-
-* Fri Mar 02 2007 Jérôme Soyer <saispo@mandriva.org> 1.3-2mdv2007.0
-+ Revision: 131194
-- Fix running
-
-* Wed Feb 28 2007 Jérôme Soyer <saispo@mandriva.org> 1.3-1mdv2007.1
-+ Revision: 126952
-- Add BR
-- Import pypar2
 
