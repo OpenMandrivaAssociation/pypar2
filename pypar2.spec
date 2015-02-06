@@ -2,7 +2,7 @@
 
 Name:		pypar2
 Version:	1.4
-Release:	9
+Release:	10
 License:	GPL
 Group:		File tools	
 Summary:	Graphical frontend for the Linux par2 command line
