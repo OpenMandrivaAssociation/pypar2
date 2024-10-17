@@ -6,7 +6,7 @@ Release:	10
 License:	GPL
 Group:		File tools	
 Summary:	Graphical frontend for the Linux par2 command line
-URL:		http://pypar2.silent-blade.org/
+URL:		https://pypar2.silent-blade.org/
 Source0:	http://pypar2.silent-blade.org/uploads/Main/%{name}-%{version}.tar.bz2
 BuildArch:	noarch
 BuildRequires:	python
