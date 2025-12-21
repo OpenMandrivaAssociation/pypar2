@@ -9,6 +9,7 @@ Summary:	Graphical frontend for the Linux par2 command line
 URL:		https://pypar2.silent-blade.org/
 Source0:	http://pypar2.silent-blade.org/uploads/Main/%{name}-%{version}.tar.bz2
 BuildArch:	noarch
+BuildRequires:	make
 BuildRequires:	python
 BuildRequires:	pygtk2.0-devel
 BuildRequires:	pygtk2.0-libglade
